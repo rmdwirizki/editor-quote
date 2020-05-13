@@ -217,7 +217,12 @@ class Quote {
     textClone.innerHTML = text.innerHTML;
 
     for (let index = 0; index < textClone.children.length; index++) {
-      textClone.children[index].prepend(document.createElement('br'));
+      const child = textClone.children[index];
+      if (child.nodeName === 'DIV') {
+        if (!(child.children && child.children.length === 1 && child.children[0].nodeName === 'BR')) {
+          child.prepend(document.createElement('br'));
+        }
+      }
     }
     
     return Object.assign(this.data, {
