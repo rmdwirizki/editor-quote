@@ -13,13 +13,13 @@ Provides Quote Blocks for the [Editor.js](https://editorjs.io).
 Get the package
 
 ```shell
-npm i --save-dev @editorjs/quote
+npm i --save-dev @rmdwirizki/editor-quote
 ```
 
 Include module at your application
 
 ```javascript
-const Quote = require('@editorjs/quote');
+const Quote = require('@rmdwirizki/editor-quote');
 ```
 
 ### Download to your project's source dir
