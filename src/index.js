@@ -213,8 +213,15 @@ class Quote {
     const text = quoteElement.querySelector(`.${this.CSS.text}`);
     const caption = quoteElement.querySelector(`.${this.CSS.caption}`);
 
+    const textClone = document.createElement('div');
+    textClone.innerHTML = text.innerHTML;
+
+    for (let index = 0; index < textClone.children.length; index++) {
+      textClone.children[index].prepend(document.createElement('br'));
+    }
+    
     return Object.assign(this.data, {
-      text: text.innerHTML,
+      text: textClone.innerHTML,
       caption: caption.innerHTML
     });
   }
